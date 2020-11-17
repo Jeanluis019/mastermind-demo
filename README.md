@@ -1,11 +1,16 @@
-# mastermind
+# Mastermind (Demo)
+This is a simple demo of the Mastermind game.
 
-## Project setup
+## Installation
 ```
+1. Clone this repo:
+git clone https://github.com/Jeanluis019/mastermind-demo.git
+
+2. Inside the project folder, run this command to install it:
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run project in development mode
 ```
 npm run serve
 ```
@@ -15,7 +20,7 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
+### Run unit tests
 ```
 npm run test:unit
 ```
@@ -24,6 +29,3 @@ npm run test:unit
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
