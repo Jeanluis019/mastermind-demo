@@ -10,26 +10,41 @@
         group: 'color'
       }"
       :key="index"
-      class="color"
+      class="draggable-color"
     >
-      {{ selectedColor }}
-      <span class="remove-color" @click="removeColor(index)">x</span>
+      <div class="color">
+        {{ selectedColor }}
+        <span class="remove-color" @click="removeColor(index)">x</span>
+      </div>
+      <p>{{ index + 1 }}</p>
     </div>
     <br />
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   computed: {
     ...mapState(["selectedColors"])
   },
   methods: {
-    removeColor(index) {
-      this.$store.commit("REMOVE_COLOR", index);
-    }
+    ...mapMutations({ removeColor: "REMOVE_COLOR" })
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.draggable-color {
+  display: inline-grid;
+
+  &:hover {
+    cursor: move;
+
+    &.dragging {
+      background: #1abc9c;
+    }
+  }
+}
+</style>

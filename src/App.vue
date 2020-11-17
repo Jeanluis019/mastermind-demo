@@ -1,12 +1,11 @@
 <template>
   <div id="app">
     <p class="code-to-break">Code to break:</p>
-    <div
-      v-for="selectedColor in correctColors"
-      :key="selectedColor"
-      class="color"
-    >
-      {{ selectedColor }}
+    <div style="display: inline-flex">
+      <div v-for="(selectedColor, index) in correctColors" :key="selectedColor">
+        <p class="color">{{ selectedColor }}</p>
+        <p><center>{{ index + 1 }}</center></p>
+      </div>
     </div>
 
     <center>
@@ -151,14 +150,6 @@ button {
   display: inline-flex;
   margin: 0 5px;
   position: relative;
-
-  &:hover {
-    cursor: move;
-
-    &.dragging {
-      background: #1abc9c;
-    }
-  }
 
   .remove-color {
     background-color: red;
