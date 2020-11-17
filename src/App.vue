@@ -152,6 +152,14 @@ button {
   margin: 0 5px;
   position: relative;
 
+  &:hover {
+    cursor: move;
+
+    &.dragging {
+      background: #1abc9c;
+    }
+  }
+
   .remove-color {
     background-color: red;
     position: absolute;

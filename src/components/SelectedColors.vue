@@ -1,8 +1,14 @@
 <template>
   <div class="selected-colors">
     <p>Selected colors:</p>
+
     <div
       v-for="(selectedColor, index) in selectedColors"
+      v-dragging="{
+        item: selectedColor,
+        list: selectedColors,
+        group: 'color'
+      }"
       :key="index"
       class="color"
     >
